@@ -6,9 +6,10 @@ export const MatchPage = () => {
  
     useEffect(
         ()=>{
-            const fetchUsers = async ()=>{
-                const response = await fetch('');
+            const fetchUsers = async () =>{
+                const response = await fetch('https://goal-bet-api.herokuapp.com/getUserDetails');
                 const data = await response.json();
+                console.log(data);
             };
             fetchUsers();
          }
