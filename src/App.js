@@ -1,9 +1,10 @@
 import './App.css';
+import { MatchPage } from './pages/MatchPage';
 
 function App() {
   return (
     <div className="App">
-      <h1>Goal-Bet</h1>
+      <MatchPage/>
     </div>
   );
 }
