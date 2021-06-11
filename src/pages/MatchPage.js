@@ -36,7 +36,6 @@ export const MatchPage = () => {
       setScore1('')
       setScore2('')
     }).catch(() => {
-      debugger
       message.error('Something went wrong')
       setLoading(false)
     })
