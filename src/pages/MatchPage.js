@@ -11,7 +11,6 @@ export const MatchPage = () => {
             const fetchMatch = async () =>{
                 const response = await fetch('https://goal-bet-api.herokuapp.com/getNextMatchDetails');
                 const data = await response.json();
-                console.log(data);
                 setMatch(data);
             };
             fetchMatch();
