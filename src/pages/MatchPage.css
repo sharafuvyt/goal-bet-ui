@@ -1,0 +1,48 @@
+.MatchPage{
+    height: 300px;
+    width: 300px;
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.8);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.header {
+    font-size: 30px;
+    font-weight: bold;
+    color: #FFF;
+    padding-bottom: 20px;
+}
+
+.macth {
+    font-size: 16px;
+    font-weight: bold;
+    padding-bottom: 20px;
+    color: white;
+}
+.score-container{
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    width: 55%;
+}
+
+input {
+    height: 20px;
+    background: none;
+    color: white;
+}
+
+.match-iput {
+    width: 50px;
+}
+button {
+    height: 32px;
+    background-color: rgb(28, 78, 138);
+    color: white;
+    width: 100px;
+}
+
+button:disabled{
+    opacity: .7;
+}
