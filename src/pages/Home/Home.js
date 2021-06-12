@@ -19,7 +19,7 @@ export const Home = () => {
   return (
     <div className="home-container">
       <div className="header-home">UEFA EURO 2020</div>
-      <div className="match-details">
+      <div className={`match-details${matchDetails.length === 1 ? ' single' : ''}`}>
         {matchDetails.map(match => <MatchCard match={match} key={match._id}/>)}
       </div>
     </div>

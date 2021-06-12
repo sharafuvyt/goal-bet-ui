@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Modal, message } from 'antd';
 import './PredictModal.scss'
 
-const PredictModal = ({isModalVisible, handleCancel, matchDetails}) => {
+const PredictModal = ({isModalVisible, handleCancel, matchDetails, flag1, flag2}) => {
 
     const [username, setUsername] = useState('') 
     const [score1, setScore1] = useState() 
@@ -48,11 +48,21 @@ const PredictModal = ({isModalVisible, handleCancel, matchDetails}) => {
             </div>
             <div className="prediction-container">
                 <div className="home-team">
-                    <span>{matchDetails.team1}</span>
+                    <div className="team">
+                        <div>
+                            <img alt="" src={flag1}/>
+                        </div>
+                        <span>{matchDetails.team1}</span>
+                    </div>
                     <input type='number' value={score1}  onChange={(e) => setScore1(e.target.value)}/>
                 </div>
                 <div className="away-team">
-                    <span>{matchDetails.team2}</span>
+                <div className="team">
+                        <div>
+                            <img alt="" src={flag2}/>
+                        </div>
+                        <span>{matchDetails.team2}</span>
+                    </div>
                     <input type='number' value={score2}  onChange={(e) => setScore2(e.target.value)}/>
                 </div>
             </div>
