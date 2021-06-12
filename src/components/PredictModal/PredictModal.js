@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Modal, message } from 'antd';
 import './PredictModal.scss'
 
-const PredictModal = ({isModalVisible, handleCancel, matchDetails, flag1, flag2}) => {
+const PredictModal = ({isModalVisible, handleCancel, handleSuccess, matchDetails, flag1, flag2}) => {
 
     const [username, setUsername] = useState('') 
     const [score1, setScore1] = useState() 
@@ -32,7 +32,7 @@ const PredictModal = ({isModalVisible, handleCancel, matchDetails, flag1, flag2}
         body: JSON.stringify(body)
       }).then(handleErrors).then(() => {
         message.success('Submitted your prediction')
-        handleCancel()
+        handleSuccess()
       }).catch(() => {
         message.error('Something went wrong')
         setLoading(false)

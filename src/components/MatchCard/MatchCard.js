@@ -10,6 +10,7 @@ import './MatchCard.scss'
 const MatchCard = ({match}) => {
 
     const [isModalVisible, setIsModalVisible] = useState(false)
+    const [isButtonDisabled, setIsButtonVisibility] = useState(false)
 
     const onPredict = () => {
         setIsModalVisible(true)
@@ -27,11 +28,16 @@ const MatchCard = ({match}) => {
         return findFlagUrlByCountryName(countryName)
     }
 
+    const handleSuccess = () => {
+        setIsButtonVisibility(true)
+        setIsModalVisible(false)
+    }
+
     const flag1 = getFlag(match.team1)
     const flag2 = getFlag(match.team2)
 
     return <div className="match-card-container">
-        <PredictModal isModalVisible={isModalVisible} handleCancel={() => setIsModalVisible(false)} matchDetails={match} flag1={flag1} flag2={flag2}/>
+        <PredictModal isModalVisible={isModalVisible} handleCancel={() => setIsModalVisible(false)} matchDetails={match} flag1={flag1} flag2={flag2} handleSuccess={handleSuccess}/>
         <div className="details">
             <div className="team-details">
                 <div className="team">
@@ -54,7 +60,7 @@ const MatchCard = ({match}) => {
         </div>
         <div className="time-mobile">{`${moment(match.Date).format('ddd, MM')} ${match.time}`}</div>
         <div className="predict-button">
-            <Button type="primary" onClick={onPredict}>Predict</Button>
+            <Button type="primary" onClick={onPredict} disabled={isButtonDisabled}>Predict</Button>
         </div>
     </div>
 }
