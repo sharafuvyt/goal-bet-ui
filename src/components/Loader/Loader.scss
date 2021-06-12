@@ -1,0 +1,18 @@
+.overlay {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(57, 49, 49, 0.7);
+    .loader{
+        outline: none;
+        border: none;
+        svg{
+            height: 50px;
+            width: 50px;
+            fill: #fe4066;
+        }
+    }
+}

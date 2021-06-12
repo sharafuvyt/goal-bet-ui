@@ -1,13 +1,13 @@
 import { React, useEffect, useState } from 'react';
 import {Button, message} from 'antd'
-import { MatchDetailCard } from '../components/MatchDetailCard';
+// import { MatchDetailCard } from '../components/MatchDetailCard';
 import './MatchPage.css'
-import { UserDetailCard } from '../components/UserDetailCard';
-import { UserSmallCard } from '../components/UserSmallCard';
+// import { UserDetailCard } from '../components/UserDetailCard';
+// import { UserSmallCard } from '../components/UserSmallCard';
 
 export const MatchPage = () => {    
  
-    const [match, setMatch] = useState({});
+    // const [match, setMatch] = useState({});
     const [username, setUsername] = useState('');
     const [score1, setScore1] = useState('');
     const [score2, setScore2] = useState('');
