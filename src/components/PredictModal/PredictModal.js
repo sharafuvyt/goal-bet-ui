@@ -19,7 +19,7 @@ const PredictModal = ({isModalVisible, handleCancel, matchDetails, flag1, flag2}
     const handleOk = () => {
         setLoading(true)
         const body = {
-          matchId: matchDetails.id,
+          matchId: matchDetails._id,
           userId: username,
           teamGoals1:Number(score1),
           teamGoals2:Number(score2)
