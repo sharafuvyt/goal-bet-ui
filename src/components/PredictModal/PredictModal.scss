@@ -1,0 +1,74 @@
+.predict-modal{
+    .ant-modal-content{
+        .ant-modal-footer{
+            background-color: #292a2b;
+            border-top: solid 1px hsl(0, 0%, 10%);
+            color: #afafaf;
+            border-radius: 0%;
+            button{
+                height: 28px;
+                border-radius: 6px;
+                font-size: 12px;
+                width: 100px;
+                &.ant-btn{
+                    background-color: #afafaf;
+                    border-color: hsl(0, 0%, 10%);
+                    color: #292a2b;
+                }
+                &.ant-btn-primary{
+                    border-color: #fe4066;
+                    background: #fe4066;
+                    color: #ffffff;
+                    &:disabled{
+                        opacity: .6;
+                    }
+                }
+            }
+        }
+        .ant-modal-body{
+            padding: 25px;
+            background-color: #292a2b;
+            color: #afafaf;
+            border: none;
+            .predic-modal-body{
+                .user-container {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    .userName{
+                        font-weight: bold;
+                    }
+                }
+                input{
+                    width: 75%;
+                    height: 32px;
+                    background-color: hsl(0, 0%, 14%);
+                    border: solid 1px hsl(0, 0%, 10%);;
+                    outline: none;
+                }
+                .prediction-container{
+                    padding-top: 20px;
+                    display: flex;
+                    flex-direction: column;
+                    .home-team, .away-team{
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        margin-bottom: 10px;
+                        input{
+                            max-width: 100px;
+                        }
+                    }
+                }
+            }
+        }
+        .ant-modal-header{
+            background-color: #292a2b;
+            border-bottom: solid 1px hsl(0, 0%, 10%);
+            border-radius: 0%;
+            .ant-modal-title{
+                color: #afafaf;
+            }
+        }
+    }
+}
