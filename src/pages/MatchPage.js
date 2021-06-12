@@ -24,10 +24,8 @@ export const MatchPage = () => {
       fetch("https://goal-bet-api.herokuapp.com/predictGoal", {
         method: "POST",
         headers: {
-          "key": "Content-Type",
-          "value": "application/json",
-          "type": "text"
-      },
+          'Content-Type': 'application/json'
+        },
       body: JSON.stringify(body)
     }).then(() => {
       message.success('Submitted your prediction')
