@@ -9,7 +9,7 @@ const ConfirmModal = ({isModalVisible, handleOk, handleCancel}) => {
     
     const onConfirm = () => {
         setLoading(true)
-        fetch(`http://goal-bet-api.herokuapp.com/validateUserPrediction?userId=${username}`).then((response) => {
+        fetch(`https://goal-bet-api.herokuapp.com/validateUserPrediction?userId=${username}`).then((response) => {
             if (!response.ok) {
                 throw Error(response.statusText);
             }
