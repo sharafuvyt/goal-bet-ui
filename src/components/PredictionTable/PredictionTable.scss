@@ -58,4 +58,14 @@
             }
         }
     }
+    .empty {
+        font-size: 28px;
+        color: rgb(2, 42, 26);
+        font-weight: bold;
+        text-align: center;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 }

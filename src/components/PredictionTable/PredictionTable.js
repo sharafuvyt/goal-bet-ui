@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import _ from 'lodash'
 import Loader from '../Loader/Loader'
 import './PredictionTable.scss'
 
@@ -13,7 +12,7 @@ const PredictionTable = () => {
             const fetchMatch = async () =>{
                 const response = await fetch('https://goal-bet-api.herokuapp.com/getPredictions')
                 const data = await response.json()
-                setPredictionList(data.data||[])
+                setPredictionList(data||[])
                 setLoading(false)
             };
             fetchMatch()
@@ -32,20 +31,18 @@ const PredictionTable = () => {
     }
 
     const getMatchPredictions = (predictions, match) => {
-        return <React.Fragment key={match}>
+        return <React.Fragment key={match._id}>
             <div className="header">
-                <span>{match}</span>
+                <span>{`${match.team1} vs ${match.team2}`}</span>
             </div>
             {predictions.map(prediction => getRow(prediction))}
         </React.Fragment>
     }
 
-    const newList = _.groupBy(predictionList, 'matchId')
-    const matches = Object.keys(newList)
-
     return<div className="prediction-table-container">
         {isPageLoading && <Loader/>}
-        {matches.map(match => getMatchPredictions(newList[match], match))}
+        {predictionList.map(prediction => getMatchPredictions(prediction.predictions, prediction.match))}
+        {(!(predictionList && predictionList.length) && !isPageLoading) && <div className="empty">No predictions yet</div>}
     </div>
 }
 
