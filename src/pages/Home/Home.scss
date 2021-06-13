@@ -11,27 +11,31 @@
         color: white;
     }
     .match-details {
-        padding: 30px 20px;
+        padding: 0px 20px;
+        padding-top: 30px;
         width: 100%;
         display: flex;
         justify-content: space-between;
+        flex-wrap: wrap;
         &.single{
             justify-content: center;
         }
         @media screen and (max-width:750px) {
-            padding: 30px 10px;
+            padding: 0px 10px;
+            padding-top: 30px;
             font-size: 12px;
         }
     }
     .table-container {
         width: 100%;
-        height: calc(100% - 235px);
-        padding: 20px;    
+        // height: calc(100% - 235px);
+        height: calc(100% - 55px);
+        padding: 20px;
         display: flex;
         justify-content: center;
-        @media screen and (max-width:750px) {
-            height: calc(100% - 275px);
-        }
+        // @media screen and (max-width:750px) {
+        //     height: calc(100% - 275px);
+        // }
         button{
             height: 50px;
             background: #fe4066;

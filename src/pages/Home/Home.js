@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-// import {Button} from 'antd'
+import {Button} from 'antd'
 import MatchCard from '../../components/MatchCard/MatchCard'
 import PredictionTable from '../../components/PredictionTable/PredictionTable'
 import ConfirmModal from '../../components/ConfirmModal/ConfirmModal'
@@ -33,11 +33,11 @@ export const Home = () => {
     <div className="home-container">
       <div className="header-home">UEFA EURO 2020</div>
       {isPageLoading && <Loader/>}
-      <div className={`match-details${matchDetails.length === 1 ? ' single' : ''}`}>
+      {!isTableVisible && <div className={`match-details${matchDetails.length === 1 ? ' single' : ''}`}>
         {matchDetails.map(match => <MatchCard match={match} key={match._id}/>)}
-      </div>
+      </div>}
       <div className="table-container">
-        {/* {!isTableVisible && !isPageLoading&&  <Button type="primary" onClick={() => setModalVisible(true) }> View all predictions</Button>} */}
+        {!isTableVisible && !isPageLoading&&  <Button type="primary" onClick={() => setModalVisible(true) }> View all predictions</Button>}
         {isTableVisible && <PredictionTable/>}
       </div>
       <ConfirmModal isModalVisible={isModalVisible} handleCancel={() => setModalVisible(false)} handleOk={onConfirm}/>

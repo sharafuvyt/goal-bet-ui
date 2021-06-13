@@ -1,7 +1,7 @@
 .match-card-container {
     height: 120px;
     max-width: 30%;
-    min-width: 110px;
+    min-width:30%;
     flex-grow: 1;
     background-color: rgba(57, 49, 49, 0.7);
     display: flex;
@@ -9,6 +9,7 @@
     padding: 10px;
     border-radius: 6px;
     color: white;
+    margin-bottom: 20px;
     @media screen and (max-width:750px) {
         height: 160px;
     }
@@ -79,6 +80,11 @@
             border-color: #fe4066;
             &:disabled{
                 opacity: .6;
+                &:focus, &:active, &:hover{
+                    background: #fe4066;
+                    border-color: #fe4066;
+                    color: #ffffff;
+                }
             }
         }
     }

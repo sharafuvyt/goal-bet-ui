@@ -1,5 +1,5 @@
 import { Button } from 'antd'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import moment from 'moment'
 import { findFlagUrlByCountryName } from "country-flags-svg";
 import walesFlag from '../../../src/assets/Wales.png'
@@ -11,6 +11,14 @@ const MatchCard = ({match}) => {
 
     const [isModalVisible, setIsModalVisible] = useState(false)
     const [isButtonDisabled, setIsButtonVisibility] = useState(false)
+
+    useEffect(() => {
+        if(match.Date) {
+            const isPastDate = moment(match.Date + ' ' +match.time).isSameOrBefore(moment())
+            isPastDate && setIsButtonVisibility(true)
+        }
+
+    }, [match])
 
     const onPredict = () => {
         setIsModalVisible(true)
