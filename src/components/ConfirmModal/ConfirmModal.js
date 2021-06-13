@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import {Modal} from 'antd'
+import {message, Modal} from 'antd'
 import './ConfirmModal.scss'
 
 const ConfirmModal = ({isModalVisible, handleOk, handleCancel}) => {
@@ -9,7 +9,19 @@ const ConfirmModal = ({isModalVisible, handleOk, handleCancel}) => {
     
     const onConfirm = () => {
         setLoading(true)
-        handleOk()
+        fetch(`http://goal-bet-api.herokuapp.com/validateUserPrediction?userId=${username}`).then((response) => {
+            if (!response.ok) {
+                throw Error(response.statusText);
+            }
+            return response;
+        }).then(() => {
+            setLoading(false)
+            handleOk()
+        }).catch(() => {
+            message.error('Please predic all matches to proceed')
+            handleCancel()
+            setLoading(false)
+        })
     }
 
     const getModalContainer = () => {
